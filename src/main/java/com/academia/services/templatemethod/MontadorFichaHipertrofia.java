@@ -13,6 +13,8 @@ public class MontadorFichaHipertrofia extends MontadorDeFichaTreino{
         List<Exercicio> exercicios = new ArrayList<>();
         exercicios.add(new ExercicioMusculacao("Supino Reto", 4, 12));
         exercicios.add(new ExercicioMusculacao("Triceps com Corda", 4, 12));
+        exercicios.add(new ExercicioMusculacao("Supino Inclinado", 4, 10));
+            exercicios.add(new ExercicioMusculacao("Extensão de Tríceps", 4, 12));
         return exercicios;
     }
 }
