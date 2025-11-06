@@ -14,6 +14,9 @@ public class CatracaVirtual {
     }
 
     public boolean liberarAcesso(Membro membro) {
+         if (membro == null) {
+            return false;
+        }
         if (membro.getMatricula() != null && membro.getMatricula().isAtiva()) {
             System.out.println(" Acesso liberado para " + membro.getNome());
             return true;
