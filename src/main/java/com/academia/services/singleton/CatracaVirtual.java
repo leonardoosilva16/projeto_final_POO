@@ -14,6 +14,10 @@ public class CatracaVirtual {
     }
 
     public boolean liberarAcesso(Membro membro) {
+        if (membro == null || membro.getMatricula() ==null) {
+                System.out.println("Acesso negado! Dados inválidos.");
+            return false;
+        }
         if (membro.getMatricula() != null && membro.getMatricula().isAtiva()) {
             System.out.println(" Acesso liberado para " + membro.getNome());
             return true;
