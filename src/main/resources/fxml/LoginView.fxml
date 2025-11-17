@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.academia.controller.LoginController">
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.academia.frontend.controller.LoginController"
+            prefWidth="400" prefHeight="300">
+
     <children>
-        <Label layoutX="150.0" layoutY="50.0" text="Login" />
-        <TextField fx:id="cpfField" layoutX="100.0" layoutY="100.0" promptText="CPF" />
-        <PasswordField fx:id="senhaField" layoutX="100.0" layoutY="130.0" promptText="Senha" />
-        <Button fx:id="loginButton" layoutX="150.0" layoutY="170.0" onAction="#handleLogin" text="Entrar" />
-        <Label fx:id="errorLabel" layoutX="100.0" layoutY="200.0" textFill="RED" />
+        <VBox spacing="15" alignment="CENTER"
+              AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"
+              AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20">
+
+            <Label text="Academia - Login"
+                   style="-fx-font-size: 22; -fx-font-weight: bold;"/>
+
+            <VBox spacing="8" prefWidth="250">
+                <Label text="Usuário:"/>
+                <TextField fx:id="usuarioField" promptText="Digite o usuário"/>
+            </VBox>
+
+            <VBox spacing="8" prefWidth="250">
+                <Label text="Senha:"/>
+                <PasswordField fx:id="senhaField" promptText="Digite a senha"/>
+            </VBox>
+
+            <Button text="Entrar" onAction="#onLogin"
+                    style="-fx-font-size: 14; -fx-padding: 8 20;"/>
+
+            <Label fx:id="mensagemErro" textFill="red" style="-fx-font-size: 12;"/>
+        </VBox>
     </children>
 </AnchorPane>
