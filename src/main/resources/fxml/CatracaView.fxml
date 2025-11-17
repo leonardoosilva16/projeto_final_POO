@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.academia.frontend.controller.CatracaController" prefWidth="700" prefHeight="300">
+    <children>
+        <VBox spacing="10" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+            <Label text="Catraca Virtual" style="-fx-font-size: 18;"/>
+            <HBox spacing="10">
+                <Label text="CPF:" />
+                <TextField fx:id="cpfField" HBox.hgrow="ALWAYS"/>
+                <Button text="Liberar Acesso" onAction="#onLiberar"/>
+            </HBox>
+            <TextArea fx:id="outputArea" prefHeight="200" editable="false"/>
+        </VBox>
+    </children>
+</AnchorPane>
