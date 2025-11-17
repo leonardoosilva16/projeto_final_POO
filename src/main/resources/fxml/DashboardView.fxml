@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
 
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.academia.controller.DashboardController">
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.academia.frontend.controller.DashboardController">
+
     <left>
-        <VBox spacing="10.0" BorderPane.alignment="CENTER">
-            <children>
-                <Button fx:id="alunosButton" onAction="#showAlunos" text="Gerenciar Alunos" />
-                <Button fx:id="instrutoresButton" onAction="#showInstrutores" text="Gerenciar Instrutores" />
-                <Button fx:id="planosButton" onAction="#showPlanos" text="Gerenciar Planos" />
-                <Button fx:id="treinosButton" onAction="#showTreinos" text="Gerenciar Treinos" />
-                <Button fx:id="pagamentosButton" onAction="#showPagamentos" text="Gerenciar Pagamentos" />
-            </children>
+        <VBox spacing="10" prefWidth="200" style="-fx-background-color: #333; -fx-padding: 15;">
+            <Label text="Academia" style="-fx-text-fill: white; -fx-font-size: 18;"/>
+            <Button text="Membros" onAction="#showMembros" maxWidth="Infinity"/>
+            <Button text="Instrutores" onAction="#showInstrutores" maxWidth="Infinity"/>
+            <Button text="Planos" onAction="#showPlanos" maxWidth="Infinity"/>
+            <Button text="Matrículas" onAction="#showMatriculas" maxWidth="Infinity"/>
+            <Button text="Fichas" onAction="#showFicha" maxWidth="Infinity"/>
+            <Button text="Catraca" onAction="#showCatraca" maxWidth="Infinity"/>
         </VBox>
     </left>
+
     <center>
-        <Label fx:id="contentLabel" text="Bem-vindo ao Sistema!" BorderPane.alignment="CENTER" />
+        <AnchorPane fx:id="contentArea"/>
     </center>
 </BorderPane>
