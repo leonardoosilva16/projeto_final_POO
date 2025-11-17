@@ -1,31 +1,36 @@
-package com.academia.controller;
+package com.academia.frontend.controller;
 
-import com.academia.model.pessoa.Membro;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.layout.AnchorPane;
 
-public class AlunosController {
-    @FXML private TableView<Membro> alunosTable;
-    @FXML private TableColumn<Membro, String> nomeCol;
-    @FXML private TableColumn<Membro, String> cpfCol;
-    @FXML private TableColumn<Membro, String> planoCol;
+public class DashboardController {
 
-    private ObservableList<Membro> alunosList = FXCollections.observableArrayList();
+    @FXML private AnchorPane contentArea;
 
     @FXML
-    private void initialize() {
-        nomeCol.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        cpfCol.setCellValueFactory(new PropertyValueFactory<>("cpf"));
-        planoCol.setCellValueFactory(new PropertyValueFactory<>("plano"));
-        alunosTable.setItems(alunosList);
+    public void initialize() {
+        showMembros();
     }
 
-    @FXML private void addAluno() {}
-    @FXML private void editAluno() {}
-    @FXML private void deleteAluno() {}
-    @FXML private void backToDashboard() {}
+    private void loadView(String path) {
+        try {
+            Parent pane = FXMLLoader.load(getClass().getResource(path));
+            contentArea.getChildren().setAll(pane);
+            AnchorPane.setTopAnchor(pane, 0.0);
+            AnchorPane.setLeftAnchor(pane, 0.0);
+            AnchorPane.setRightAnchor(pane, 0.0);
+            AnchorPane.setBottomAnchor(pane, 0.0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML private void showMembros() { loadView("/fxml/MembrosView.fxml"); }
+    @FXML private void showInstrutores() { loadView("/fxml/InstrutoresView.fxml"); }
+    @FXML private void showPlanos() { loadView("/fxml/PlanosView.fxml"); }
+    @FXML private void showMatriculas() { loadView("/fxml/MatriculasView.fxml"); }
+    @FXML private void showFicha() { loadView("/fxml/FichaTreinoView.fxml"); }
+    @FXML private void showCatraca() { loadView("/fxml/CatracaView.fxml"); }
 }
