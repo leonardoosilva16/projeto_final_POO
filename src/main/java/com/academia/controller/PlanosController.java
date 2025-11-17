@@ -1,38 +1,42 @@
-package com.academia.controller;
+package com.academia.frontend.controller;
 
+import com.academia.frontend.service.ServiceFacade;
 import com.academia.model.plano.Plano;
 import com.academia.model.plano.PlanoMusculacao;
 import com.academia.model.plano.PlanoPremium;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.*;
+
+import java.util.List;
+import java.util.Optional;
+import javafx.collections.FXCollections;
 
 public class PlanosController {
-
-    @FXML private TableView<Plano> planosTable;
-    @FXML private TableColumn<Plano, String> nomeCol;
-    @FXML private TableColumn<Plano, Double> precoCol;
-
-    private ObservableList<Plano> planosList = FXCollections.observableArrayList();
+    @FXML private ListView<Plano> listPlanos;
 
     @FXML
-    private void initialize() {
-
-        nomeCol.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        precoCol.setCellValueFactory(new PropertyValueFactory<>("preco"));
-
-        // Exemplos de planos disponíveis
-        planosList.add(new PlanoMusculacao());
-        planosList.add(new PlanoPremium());
-
-        planosTable.setItems(planosList);
+    public void initialize() {
+        refresh();
     }
 
-    @FXML private void addPlano() {}
-    @FXML private void editPlano() {}
-    @FXML private void deletePlano() {}
-    @FXML private void backToDashboard() {}
+    private void refresh() {
+        List<Plano> p = ServiceFacade.planoRepo.listarPlanos();
+        listPlanos.setItems(FXCollections.observableArrayList(p));
+    }
+
+    @FXML
+    private void onNovo() {
+        ChoiceDialog<String> dialog = new ChoiceDialog<>("Plano Musculação", "Plano Musculação", "Plano Premium");
+        dialog.setTitle("Adicionar Plano");
+        dialog.setHeaderText("Escolha um tipo de plano");
+        Optional<String> chosen = dialog.showAndWait();
+        chosen.ifPresent(s -> {
+            if (s.equals("Plano Musculação")) {
+                ServiceFacade.planoRepo.salvar(new PlanoMusculacao());
+            } else {
+                ServiceFacade.planoRepo.salvar(new PlanoPremium());
+            }
+            refresh();
+        });
+    }
 }
