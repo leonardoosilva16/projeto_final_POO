@@ -1,0 +1,19 @@
+package com.academia.frontend.service;
+
+import com.academia.Repository.CatracaVirtual;
+import com.academia.Repository.InstrutorRepository;
+import com.academia.Repository.MembroRepository;
+import com.academia.Repository.PlanoRepository;
+
+/**
+ * Facade that exposes shared repository instances from the backend.
+ * Adjust if you prefer backend-managed singletons.
+ */
+public class ServiceFacade {
+    public static final MembroRepository membroRepo = new MembroRepository();
+    public static final InstrutorRepository instrutorRepo = new InstrutorRepository();
+    public static final PlanoRepository planoRepo = new PlanoRepository();
+    public static final CatracaVirtual catraca = CatracaVirtual.getInstancia();
+
+    private ServiceFacade() {}
+}
