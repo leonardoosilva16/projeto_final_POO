@@ -1,26 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
 
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.academia.controller.PlanosController">
-    <top>
-        <HBox spacing="10.0" BorderPane.alignment="CENTER">
-            <children>
-                <Button onAction="#addPlano" text="Adicionar Plano" />
-                <Button onAction="#editPlano" text="Editar" />
-                <Button onAction="#deletePlano" text="Excluir" />
-            </children>
-        </HBox>
-    </top>
-    <center>
-        <TableView fx:id="planosTable" BorderPane.alignment="CENTER">
-            <columns>
-                <TableColumn fx:id="nomeCol" text="Nome" />
-                <TableColumn fx:id="precoCol" text="Preço" />
-            </columns>
-        </TableView>
-    </center>
-    <bottom>
-        <Button onAction="#backToDashboard" text="Voltar" BorderPane.alignment="CENTER" />
-    </bottom>
-</BorderPane>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.academia.frontend.controller.PlanosController" prefWidth="700" prefHeight="500">
+    <children>
+        <VBox spacing="8" AnchorPane.topAnchor="8" AnchorPane.leftAnchor="8" AnchorPane.rightAnchor="8">
+            <HBox>
+                <Label text="Planos" style="-fx-font-size: 18"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Novo" onAction="#onNovo"/>
+            </HBox>
+            <ListView fx:id="listPlanos" prefHeight="430"/>
+        </VBox>
+    </children>
+</AnchorPane>
