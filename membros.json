@@ -1,0 +1,15 @@
+[
+  {
+    "matricula": {
+      "plano": {
+        "nome": "Plano Musculação",
+        "preco": 100.0,
+        "CLASSE_TYPE": "com.academia.model.plano.PlanoMusculacao"
+      },
+      "dataMatricula": "Nov 18, 2025, 5:48:42 PM",
+      "dataVencimento": "Dec 18, 2025, 5:48:42 PM"
+    },
+    "nome": "Allan",
+    "cpf": "123.456.789-10"
+  }
+]

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+
+<TabPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <tabs>
+
+        <Tab text="Membros">
+            <content>
+                <fx:include source="MembrosView.fxml"/>
+            </content>
+        </Tab>
+
+        <Tab text="Instrutores">
+            <content>
+                <fx:include source="InstrutoresView.fxml"/>
+            </content>
+        </Tab>
+
+        <Tab text="Planos">
+            <content>
+                <fx:include source="PlanoView.fxml"/>
+            </content>
+        </Tab>
+
+        <Tab text="Catraca">
+            <content>
+                <fx:include source="CatracaView.fxml"/>
+            </content>
+        </Tab>
+
+    </tabs>
+</TabPane>

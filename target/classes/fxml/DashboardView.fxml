@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.academia.frontend.controller.DashboardController">
+    <left>
+        <VBox spacing="10" style="-fx-background-color: #2d2d2d;" prefWidth="180" padding="10">
+            <Label text="Menu" style="-fx-text-fill: white; -fx-font-size: 18;" />
+            <Button text="Início" onAction="#showHome" maxWidth="Infinity"/>
+            <Button text="Alunos" onAction="#showAlunos" maxWidth="Infinity"/>
+            <Button text="Instrutores" onAction="#showInstrutores" maxWidth="Infinity"/>
+            <Button text="Planos" onAction="#showPlanos" maxWidth="Infinity"/>
+            <Button text="Catraca" onAction="#showCatraca" maxWidth="Infinity"/>
+            <Region VBox.vgrow="ALWAYS"/>
+            <Label text="v1.0" style="-fx-text-fill: gray;"/>
+        </VBox>
+    </left>
+
+    <center>
+        <AnchorPane fx:id="contentArea" />
+    </center>
+</BorderPane>

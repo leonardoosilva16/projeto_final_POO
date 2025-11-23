@@ -42,7 +42,6 @@ public class Matricula {
         System.out.println("💪 Matrícula renovada! Novo vencimento: " + dataVencimento);
     }
 
-
     //vai ser usado na classe da Catraca para determianr quais matriculas estão vencidas
     public boolean isAtiva() {
         return new Date().before(this.dataVencimento);

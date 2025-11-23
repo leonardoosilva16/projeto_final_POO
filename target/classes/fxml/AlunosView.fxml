@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.academia.frontend.controller.AlunosController"
+            prefWidth="600" prefHeight="400" style="-fx-padding: 10;">
+    <children>
+        <VBox spacing="8" AnchorPane.topAnchor="8" AnchorPane.leftAnchor="8" AnchorPane.rightAnchor="8" AnchorPane.bottomAnchor="8">
+            <HBox spacing="8">
+                <Label text="Alunos" style="-fx-font-size: 18;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Novo" onAction="#onNovo"/>
+                <Button text="Editar" onAction="#onEditar"/>
+                <Button text="Remover" onAction="#onRemover"/>
+            </HBox>
+
+            <TableView fx:id="tableAlunos" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="colNome" text="Nome" prefWidth="220"/>
+                    <TableColumn fx:id="colCpf" text="CPF" prefWidth="180"/>
+                    <TableColumn fx:id="colPlano" text="Plano" prefWidth="180"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </children>
+</AnchorPane>

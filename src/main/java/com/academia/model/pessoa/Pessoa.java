@@ -23,4 +23,18 @@ public abstract class Pessoa {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Pessoa pessoa = (Pessoa) obj;
+        return cpf != null ? cpf.equals(pessoa.cpf) : pessoa.cpf == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return cpf != null ? cpf.hashCode() : 0;
+    }
+
 }

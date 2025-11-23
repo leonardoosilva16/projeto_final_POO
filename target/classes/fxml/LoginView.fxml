@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.academia.frontend.controller.LoginController"
+            prefWidth="600" prefHeight="400" style="-fx-padding: 20;">
+    <VBox spacing="12" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+        <Label text="Bem-vindo — Sistema da Academia" style="-fx-font-size: 18;" />
+        <HBox spacing="8">
+            <Label text="Tipo:"/>
+            <ChoiceBox fx:id="choiceTipo" prefWidth="180"/>
+        </HBox>
+
+        <HBox spacing="8">
+            <Label text="CPF:"/>
+            <TextField fx:id="cpfField" HBox.hgrow="ALWAYS"/>
+        </HBox>
+
+        <HBox spacing="8">
+            <Button text="Entrar" onAction="#onEntrar" />
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Sair" onAction="#onSair" />
+        </HBox>
+
+        <Separator/>
+
+        <Label text="Ações rápidas (após login)" style="-fx-font-size: 12; -fx-opacity: 0.8;"/>
+        <HBox spacing="8">
+            <Button text="Abrir Dashboard" onAction="#openDashboard" fx:id="btnOpenDashboard" disable="true"/>
+            <Button text="Abrir Pagamentos" onAction="#openPayments" fx:id="btnOpenPayments" disable="true"/>
+        </HBox>
+
+        <TextArea fx:id="outputArea" prefHeight="180" editable="false"/>
+    </VBox>
+</AnchorPane>

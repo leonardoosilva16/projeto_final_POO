@@ -14,6 +14,9 @@ public class MontadorFichaEmagrecimento extends MontadorDeFichaTreino {
         List<Exercicio> exercicios = new ArrayList<>();
         exercicios.add(new ExercicioMusculacao("Agachamento (circuito)", 4, 12));
         exercicios.add(new ExercicioAerobico("Esterira", 30));
+        exercicios.add(new ExercicioMusculacao("Jump Squats", 5, 30));
+        exercicios.add(new ExercicioMusculacao("High Knees", 5, 30));
+        exercicios.add(new ExercicioAerobico("Descanso", 5));
         return exercicios;
     }
 }
